@@ -1,0 +1,23 @@
+server:
+  port: 10003
+
+spring:
+  application:
+    name: cloud-gateway-zull
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:10001/eureka/
+
+zuul:
+  ignored-services: '*'
+  routes:
+    consume-service:
+      path: /cloud-consume-service/**
+      service-id: cloud-consume-service
+    produce-service:
+      path: /cloud-produce-service/**
+      service-id: cloud-produce-service
