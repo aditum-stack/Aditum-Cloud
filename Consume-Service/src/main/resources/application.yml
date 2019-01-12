@@ -1,0 +1,14 @@
+server:
+  port: 20002
+
+spring:
+  application:
+    name: cloud-consume-service
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:10001/eureka/
+
+# 要消费的生产者的URL常量
+PRODUCESERVICEURL: http://cloud-produce-service/

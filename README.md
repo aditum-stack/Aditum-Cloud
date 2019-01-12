@@ -2,7 +2,7 @@
 
 Spring Cloud Center for Aditum. Aditum微服务架构中心. 
 
-## Spring Cloud 框架下的微服务管理中心的搭建
+# Spring Cloud 框架下的微服务管理中心的搭建
 
 |模块|功能|环境|端口号|
 |---|---|---|---|
@@ -12,6 +12,13 @@ Spring Cloud Center for Aditum. Aditum微服务架构中心.
 |Eureka-Client|服务注册中心客户端|测试Eureka注册服务|20001
 |Consume-Service|服务消费者|测试微服务流程-调用服务|20002
 |Produce-Service|服务生产者|测试微服务流程-提供服务|20003
+
+## 启动流程
+
+1. 启动 Eureka-Server 服务注册中心
+2. 启动其他服务（顺序任意，但推荐先启动生产项目）
+3. 浏览器输入 localhost:20002/consume/{任意字符串} 即刻访问 Consume-Service 调用 Produce-Service 的返回结果
+4. 输入 http://localhost:10003/hystrix 进入监控中心
 
 ## 需求分析
 
@@ -52,6 +59,8 @@ API网关是一个服务器，可以说是进入系统的唯一节点，封装�
 ## Eureka客户端
 
 通过类RestTemplate进行服务调用，可使用 服务名/服务ip地址 进行接口调用
+
+注意，依赖是 eureka-server 那一个，而不是 eureka-client 那一个
 
 ## Ribbon负载均衡
 

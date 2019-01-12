@@ -1,0 +1,11 @@
+server:
+  port: 20003
+
+spring:
+  application:
+    name: cloud-produce-service
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:10001/eureka/
