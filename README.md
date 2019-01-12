@@ -44,7 +44,7 @@ Eureka服务发现中心地址：http://${eureka.instance.hostname}:${server.por
 
 ## Hystrix DashBoard监控平台使用
 
-引入相关依赖，启用 @EnableHystrixDashboard 注解，通过 /hystrix.stream 访问
+引入相关依赖，启用 @EnableHystrixDashboard （好像还需要@EnableCircuitBreaker）注解，通过引入监控的项目 ip:port/hystrix 访问，然后输入 ip:port/hystrix.stream 进行监控
 
 ## Zuul API网关
 
