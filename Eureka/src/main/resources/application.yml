@@ -1,12 +1,13 @@
+spring:
+  application:
+    name: cloud-eureka-server
+
 server:
   port: 10001
 
 eureka:
   instance:
     hostname: localhost
-  server:
-    wait-time-in-ms-when-sync-empty: 5
-    enable-self-preservation: false
   client:
     registerWithEureka: false
     fetchRegistry: false
