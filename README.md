@@ -1,8 +1,17 @@
 # Aditum Cloud
 
-Spring Cloud Center for Aditum Project
+Spring Cloud Center for Aditum. Aditum微服务架构中心. 
 
 ## Spring Cloud 框架下的微服务管理中心的搭建
+
+|模块|功能|环境|端口号|
+|---|---|---|---|
+|Eureka-Server|服务注册中心服务端|生产|10001
+|Gateway-Zuul|服务API网关服务|生产|10002
+|Hystrix-Dashboard|服务状态监控器|生产-监控|10003
+|Eureka-Client|服务注册中心客户端|测试Eureka注册服务|20001
+|Consume-Service|服务消费者|测试微服务流程-调用服务|20002
+|Produce-Service|服务生产者|测试微服务流程-提供服务|20003
 
 ## 需求分析
 
@@ -35,8 +44,6 @@ Eureka服务发现中心地址：http://${eureka.instance.hostname}:${server.por
 API网关是一个服务器，可以说是进入系统的唯一节点，封装了内部系统的架构，并且提供了API给各个客户端。
 
 负责请求转发、合成、协议转换。先网关，在负载均衡到对应的微服务。
-
-
 
 --------------------------------------------------------------
 
