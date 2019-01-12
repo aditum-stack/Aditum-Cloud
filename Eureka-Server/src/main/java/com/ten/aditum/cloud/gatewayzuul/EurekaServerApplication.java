@@ -1,4 +1,4 @@
-package com.ten.aditum.cloud.eurekaserver;
+package com.ten.aditum.cloud.gatewayzuul;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
