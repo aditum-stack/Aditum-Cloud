@@ -58,9 +58,9 @@ API网关是一个服务器，可以说是进入系统的唯一节点，封装�
 
 ## Eureka客户端
 
-通过类RestTemplate进行服务调用，可使用 服务名/服务ip地址 进行接口调用
+启用注解 @EnableDiscoveryClient ，注册为客户端
 
-注意，依赖是 eureka-server 那一个，而不是 eureka-client 那一个
+通过类RestTemplate进行服务调用，可使用 服务名/服务ip地址 进行接口调用
 
 ## Ribbon负载均衡
 
