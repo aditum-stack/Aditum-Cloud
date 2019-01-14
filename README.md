@@ -18,8 +18,8 @@ Spring Cloud Center for Aditum. Aditum微服务架构中心.
 1. 启动 Eureka-Server 服务注册中心
 2. 启动其他服务（顺序任意，但推荐先启动生产项目）
 3. 浏览器输入 localhost:20002/consume/{任意字符串} 即可访问 Consume-Service 调用 Produce-Service 的返回结果
-3. 输入localhost:10002/consume/consume/{string} 即可通过API网关访问服务
-4. 输入 http://localhost:10003/hystrix 进入监控中心
+3. 输入localhost:10002/consume-service/consume/{string} 即可通过API网关访问 Consume-Service 调用 Produce-Service 的返回结果
+4. 输入http://localhost:10003/hystrix 进入监控中心
 
 ## 需求分析
 
@@ -29,23 +29,17 @@ Spring Cloud Center for Aditum. Aditum微服务架构中心.
 
 采用Apollo实现配置中心服务端，替代springcloud-config，在此项目中不再进行config服务端实现。
 
-同时，此项目中的各个配置项，首先采用本地resources文件进行开发。
-
-开发通过后，在正式环境中，将通过apollo服务进行获取，不再写入到resources文件中。
-
-由于apollo对properties文件支持好，将使用properties文件替代yml文件。
-
-apollo配置中心地址：ip:[8070]/[8080]/[8090]
+apollo配置中心地址：云主机IP:8080
 
 ## Eureka服务注册中心
 
 实现springcloud-eureka服务端，各个微服务通过http进行服务注册发现。
 
-Eureka服务发现中心地址：http://${eureka.instance.hostname}:${server.port}/eureka/
+Eureka服务发现中心地址：http://通过APOLLO获取地址/eureka/ （默认为localhost）
 
 ## Hystrix DashBoard监控平台使用
 
-引入相关依赖，启用 @EnableHystrixDashboard （好像还需要@EnableCircuitBreaker）注解，通过引入监控的项目 ip:port/hystrix 访问，然后输入 ip:port/hystrix.stream 进行监控
+引入相关依赖，启用 @EnableHystrixDashboard @EnableCircuitBreaker @EnableHystrix 三个注解，通过引入监控的项目，通过ip:port/hystrix 访问，然后输入 ip:port/hystrix.stream 进行监控
 
 ## Zuul API网关
 

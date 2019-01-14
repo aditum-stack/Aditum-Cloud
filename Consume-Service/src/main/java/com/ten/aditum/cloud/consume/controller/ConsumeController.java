@@ -2,7 +2,6 @@ package com.ten.aditum.cloud.consume.controller;
 
 import com.ten.aditum.cloud.consume.service.ProduceClient;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -13,9 +12,6 @@ public class ConsumeController {
 
     @Autowired
     private ProduceClient produceClient;
-
-//    @Value("${PRODUCESERVICEURL}")
-//    private String PRODUCESERVICEURL;
 
     @RequestMapping(value = "/{string}")
     public String consume(@PathVariable String string) {
@@ -31,7 +27,11 @@ public class ConsumeController {
         System.out.println("Consume调用Produce得到结果：" + response);
         return response;
     }
+}
+//    以下为基于RestTemplate进行开发（使用Feign替代）：
 
+//    @Value("${PRODUCESERVICEURL}")
+//    private String PRODUCESERVICEURL;
 //    ResponseEntity<String> rateResponse =
 //            restTemplate.exchange(
 //                    PRODUCESERVICEURL + "/produce/" + string,
@@ -40,4 +40,4 @@ public class ConsumeController {
 //                    new ParameterizedTypeReference<String>() {
 //                    });
 //    String response = rateResponse.getBody();
-}
+

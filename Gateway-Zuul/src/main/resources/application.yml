@@ -1,25 +1,5 @@
-server:
-  port: 10002
-
-spring:
-  application:
-    name: cloud-gateway-zuul
-
-eureka:
-  instance:
-    prefer-ip-address: true
-  client:
-    serviceUrl:
-      defaultZone: http://localhost:10001/eureka/
-
-zuul:
-  ignored-services: '*'
-  routes:
-    consume-service:
-      # 要拦截的请求的路径
-      path: /consume-service/**
-      # 被拦截的请求映射的服务
-      service-id: cloud-consume-service
-    produce-service:
-      path: /produce-service/**
-      service-id: cloud-produce-service
+apollo:
+  meta: http://47.106.11.84:8080
+  bootstrap:
+    enabled: true
+    namespaces: application,ADITUM.zuul

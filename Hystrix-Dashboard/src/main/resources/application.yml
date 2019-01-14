@@ -1,6 +1,5 @@
-server:
-  port: 10003
-
-spring:
-  application:
-    name: cloud-hystrix-dashboard
+apollo:
+  meta: http://47.106.11.84:8080
+  bootstrap:
+    enabled: true
+    namespaces: application,ADITUM.hystrixdashboard

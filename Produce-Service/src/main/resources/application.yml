@@ -1,11 +1,5 @@
-server:
-  port: 20003
-
-spring:
-  application:
-    name: cloud-produce-service
-
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://localhost:10001/eureka/
+apollo:
+  meta: http://47.106.11.84:8080
+  bootstrap:
+    enabled: true
+    namespaces: application,ADITUM.produce
