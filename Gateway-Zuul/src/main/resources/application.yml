@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-    name: cloud-gateway-zull
+    name: cloud-gateway-zuul
 
 eureka:
   instance:
@@ -16,8 +16,10 @@ zuul:
   ignored-services: '*'
   routes:
     consume-service:
-      path: /cloud-consume-service/**
+      # 要拦截的请求的路径
+      path: /consume-service/**
+      # 被拦截的请求映射的服务
       service-id: cloud-consume-service
     produce-service:
-      path: /cloud-produce-service/**
+      path: /produce-service/**
       service-id: cloud-produce-service

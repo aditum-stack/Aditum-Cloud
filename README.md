@@ -17,7 +17,8 @@ Spring Cloud Center for Aditum. Aditum微服务架构中心.
 
 1. 启动 Eureka-Server 服务注册中心
 2. 启动其他服务（顺序任意，但推荐先启动生产项目）
-3. 浏览器输入 localhost:20002/consume/{任意字符串} 即刻访问 Consume-Service 调用 Produce-Service 的返回结果
+3. 浏览器输入 localhost:20002/consume/{任意字符串} 即可访问 Consume-Service 调用 Produce-Service 的返回结果
+3. 输入localhost:10002/consume/consume/{string} 即可通过API网关访问服务
 4. 输入 http://localhost:10003/hystrix 进入监控中心
 
 ## 需求分析
@@ -52,6 +53,8 @@ API网关是一个服务器，可以说是进入系统的唯一节点，封装�
 
 负责请求转发、合成、协议转换。先网关，在负载均衡到对应的微服务。
 
+将Feign类路径统一映射为API网关地址，在方法中映射不同的微服务的路径，从而实现API网关的统一请求管理。 
+
 --------------------------------------------------------------
 
 # 客户端
@@ -60,7 +63,15 @@ API网关是一个服务器，可以说是进入系统的唯一节点，封装�
 
 启用注解 @EnableDiscoveryClient ，注册为客户端
 
-通过类RestTemplate进行服务调用，可使用 服务名/服务ip地址 进行接口调用
+## 服务调用
+
+### HttpClient 调用
+
+通过类RestTemplate进行服务调用，可使用 服务名/服务ip地址 进行REST接口调用
+
+### Feign服务调用
+
+通过 @EnableFeignClients 启用服务。通过 @FeignClient("服务名") 定义接口，通过注解方法进行远程调用。
 
 ## Ribbon负载均衡
 

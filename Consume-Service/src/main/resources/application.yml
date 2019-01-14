@@ -10,5 +10,14 @@ eureka:
     serviceUrl:
       defaultZone: http://localhost:10001/eureka/
 
+feign:
+  client:
+    config:
+      feignName:
+        connectTimeout: 5000
+        readTimeout: 5000
+  hystrix:
+    enabled: true
+
 # 要消费的生产者的URL常量
-PRODUCESERVICEURL: http://cloud-produce-service/
+# PRODUCESERVICEURL: http://cloud-produce-service/
