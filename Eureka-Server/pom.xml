@@ -3,6 +3,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <artifactId>eureka-server</artifactId>
+    <packaging>jar</packaging>
 
     <parent>
         <groupId>com.ten.aditum.cloud</groupId>
@@ -11,9 +12,15 @@
     </parent>
 
     <dependencies>
+        <!--eureka服务端-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
+        </dependency>
+        <!--apollo配置中心客户端-->
+        <dependency>
+            <groupId>com.ctrip.framework.apollo</groupId>
+            <artifactId>apollo-client</artifactId>
         </dependency>
     </dependencies>
 

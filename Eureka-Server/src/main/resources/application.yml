@@ -1,13 +1,19 @@
-spring:
-  application:
-    name: cloud-eureka-server
+apollo:
+  meta: http://47.106.11.84:8080
+  bootstrap:
+    enabled: true
+    namespaces: application,ADITUM.eureka
 
 server:
-  port: 10001
+  port: ${port:10000}
+
+spring:
+  application:
+    name: ${name:default-application-name}
 
 eureka:
   instance:
-    hostname: localhost
+    hostname: ${hostname:localhost}
   client:
     registerWithEureka: false
     fetchRegistry: false

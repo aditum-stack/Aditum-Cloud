@@ -1,0 +1,17 @@
+apollo:
+  meta: http://47.106.11.84:8080
+  bootstrap:
+    enabled: true
+    namespaces: application,ADITUM.xxx
+
+server:
+  port: ${port:10000}
+
+spring:
+  application:
+    name: ${name:default-application-name}
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:10001/eureka/
