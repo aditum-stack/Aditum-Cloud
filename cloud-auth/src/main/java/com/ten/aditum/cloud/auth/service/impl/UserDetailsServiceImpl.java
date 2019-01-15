@@ -1,13 +1,14 @@
 package com.ten.aditum.cloud.auth.service.impl;
+
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.microservice.skeleton.auth.service.PermissionService;
-import com.microservice.skeleton.auth.service.RoleService;
-import com.microservice.skeleton.auth.service.UserService;
-import com.microservice.skeleton.common.util.StatusCode;
-import com.microservice.skeleton.common.vo.MenuVo;
-import com.microservice.skeleton.common.vo.Result;
-import com.microservice.skeleton.common.vo.RoleVo;
-import com.microservice.skeleton.common.vo.UserVo;
+import com.ten.aditum.cloud.auth.service.PermissionService;
+import com.ten.aditum.cloud.auth.service.RoleService;
+import com.ten.aditum.cloud.auth.service.UserService;
+import com.ten.aditum.cloud.auth.util.StatusCode;
+import com.ten.aditum.cloud.auth.vo.MenuVo;
+import com.ten.aditum.cloud.auth.vo.Result;
+import com.ten.aditum.cloud.auth.vo.RoleVo;
+import com.ten.aditum.cloud.auth.vo.UserVo;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
@@ -50,19 +51,19 @@ public class UserDetailsServiceImpl implements UserDetailsService {
         boolean credentialsNonExpired = true; // 有效性 :true:凭证有效 false:凭证无效
         boolean accountNonLocked = true; // 锁定性 :true:未锁定 false:已锁定
         UserVo userVo = new UserVo();
-        BeanUtils.copyProperties(userResult.getData(),userVo);
+        BeanUtils.copyProperties(userResult.getData(), userVo);
         Result<List<RoleVo>> roleResult = roleService.getRoleByUserId(userVo.getId());
-        if (roleResult.getCode() != StatusCode.SUCCESS_CODE){
+        if (roleResult.getCode() != StatusCode.SUCCESS_CODE) {
             List<RoleVo> roleVoList = roleResult.getData();
-            for (RoleVo role:roleVoList){
+            for (RoleVo role : roleVoList) {
                 //角色必须是ROLE_开头，可以在数据库中设置
-                GrantedAuthority grantedAuthority = new SimpleGrantedAuthority("ROLE_"+role.getValue());
+                GrantedAuthority grantedAuthority = new SimpleGrantedAuthority("ROLE_" + role.getValue());
                 grantedAuthorities.add(grantedAuthority);
                 //获取权限
-                Result<List<MenuVo>> perResult  = permissionService.getRolePermission(role.getId());
-                if (perResult.getCode() != StatusCode.SUCCESS_CODE){
+                Result<List<MenuVo>> perResult = permissionService.getRolePermission(role.getId());
+                if (perResult.getCode() != StatusCode.SUCCESS_CODE) {
                     List<MenuVo> permissionList = perResult.getData();
-                    for (MenuVo menu:permissionList
+                    for (MenuVo menu : permissionList
                             ) {
                         GrantedAuthority authority = new SimpleGrantedAuthority(menu.getCode());
                         grantedAuthorities.add(authority);

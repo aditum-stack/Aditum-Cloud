@@ -17,6 +17,12 @@
         <!--<groupId>com.ctrip.framework.apollo</groupId>-->
         <!--<artifactId>apollo-client</artifactId>-->
         <!--</dependency>-->
+        <!--java简化-->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
+        </dependency>
         <!--eureka客户端-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>

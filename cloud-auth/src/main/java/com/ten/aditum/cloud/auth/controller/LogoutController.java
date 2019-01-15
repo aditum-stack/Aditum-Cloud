@@ -1,7 +1,7 @@
 package com.ten.aditum.cloud.auth.controller;
 
-import com.microservice.skeleton.common.util.StatusCode;
-import com.microservice.skeleton.common.vo.Result;
+import com.ten.aditum.cloud.auth.util.StatusCode;
+import com.ten.aditum.cloud.auth.vo.Result;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.oauth2.provider.token.ConsumerTokenServices;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -22,12 +22,12 @@ public class LogoutController {
 
     @DeleteMapping(value = "/exit")
     public @ResponseBody
-    Result revokeToken(String access_token){
+    Result revokeToken(String access_token) {
         Result msg = new Result();
-        if (consumerTokenServices.revokeToken(access_token)){
+        if (consumerTokenServices.revokeToken(access_token)) {
             msg.setCode(StatusCode.SUCCESS_CODE);
             msg.setMsg("注销成功");
-        }else {
+        } else {
             msg.setCode(StatusCode.FAILURE_CODE);
             msg.setMsg("注销失败");
         }

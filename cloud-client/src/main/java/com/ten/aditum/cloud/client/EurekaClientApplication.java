@@ -1,4 +1,4 @@
-package com.ten.aditum.cloud.eurekaclient;
+package com.ten.aditum.cloud.client;
 
 import com.ctrip.framework.apollo.spring.annotation.EnableApolloConfig;
 import org.springframework.beans.factory.annotation.Value;

@@ -1,9 +1,10 @@
 package com.ten.aditum.cloud.auth.service.impl;
 
-import com.microservice.skeleton.auth.service.RoleService;
-import com.microservice.skeleton.common.vo.Result;
-import com.microservice.skeleton.common.vo.RoleVo;
-import lombok.extern.slf4j.Slf4j;
+import com.ten.aditum.cloud.auth.service.RoleService;
+import com.ten.aditum.cloud.auth.vo.Result;
+import com.ten.aditum.cloud.auth.vo.RoleVo;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -16,11 +17,12 @@ import java.util.List;
  * Time: 11:06
  */
 @Service
-private static final Logger log= LoggerFactory.getLogger(PreRequestFilter.class);
 public class RoleServiceImpl implements RoleService {
+    private static final Logger log = LoggerFactory.getLogger(RoleServiceImpl.class);
+
     @Override
     public Result<List<RoleVo>> getRoleByUserId(Integer userId) {
-        log.info("调用{}失败","getRoleByUserId");
-        return Result.failure(100,"调用getRoleByUserId失败");
+        log.info("调用{}失败", "getRoleByUserId");
+        return Result.failure(100, "调用getRoleByUserId失败");
     }
 }

@@ -1,8 +1,8 @@
 package com.ten.aditum.cloud.auth.service;
 
-import com.microservice.skeleton.auth.service.impl.UserServiceImpl;
-import com.microservice.skeleton.common.vo.Result;
-import com.microservice.skeleton.common.vo.UserVo;
+import com.ten.aditum.cloud.auth.service.impl.UserServiceImpl;
+import com.ten.aditum.cloud.auth.vo.Result;
+import com.ten.aditum.cloud.auth.vo.UserVo;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.PathVariable;
  * Time:15:12
  * ProjectName:Mirco-Service-Skeleton
  */
-@FeignClient(name = "mss-upms",fallback = UserServiceImpl.class)
+@FeignClient(name = "mss-upms", fallback = UserServiceImpl.class)
 public interface UserService {
     @GetMapping("user/findByUsername/{username}")
     Result<UserVo> findByUsername(@PathVariable("username") String username);

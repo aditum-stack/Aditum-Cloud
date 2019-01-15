@@ -25,6 +25,7 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="Maven: org.projectlombok:lombok:1.16.20" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.cloud:spring-cloud-starter-netflix-eureka-client:2.0.3.BUILD-SNAPSHOT" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.cloud:spring-cloud-starter:2.0.3.BUILD-SNAPSHOT" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.cloud:spring-cloud-context:2.0.3.BUILD-SNAPSHOT" level="project" />
@@ -197,7 +198,6 @@
     <orderEntry type="library" name="Maven: com.google.guava:guava:15.0" level="project" />
     <orderEntry type="library" name="Maven: io.reactivex:rxjava-reactive-streams:1.2.1" level="project" />
     <orderEntry type="library" name="Maven: org.reactivestreams:reactive-streams:1.0.2" level="project" />
-    <orderEntry type="library" name="Maven: org.projectlombok:lombok:1.16.20" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.springframework.boot:spring-boot-starter-test:2.0.7.RELEASE" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.springframework.boot:spring-boot-test:2.0.7.RELEASE" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.springframework.boot:spring-boot-test-autoconfigure:2.0.7.RELEASE" level="project" />

@@ -22,7 +22,7 @@ import java.io.IOException;
  * Date: 2018-12-06
  * Time: 16:28
  */
-public class MssWebResponseExceptionTranslator implements WebResponseExceptionTranslator<OAuth2Exception> {
+public class MssWebResponseExceptionTranslator implements WebResponseExceptionTranslator {
 
     private ThrowableAnalyzer throwableAnalyzer = new DefaultThrowableAnalyzer();
 

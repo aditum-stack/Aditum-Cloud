@@ -1,9 +1,10 @@
 package com.ten.aditum.cloud.auth.service.impl;
 
-import com.microservice.skeleton.auth.service.PermissionService;
-import com.microservice.skeleton.common.vo.MenuVo;
-import com.microservice.skeleton.common.vo.Result;
-import lombok.extern.slf4j.Slf4j;
+import com.ten.aditum.cloud.auth.service.PermissionService;
+import com.ten.aditum.cloud.auth.vo.MenuVo;
+import com.ten.aditum.cloud.auth.vo.Result;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -15,12 +16,13 @@ import java.util.List;
  * Date: 2018-06-13
  * Time: 11:14
  */
-private static final Logger log= LoggerFactory.getLogger(PreRequestFilter.class);
 @Service
 public class PermissionServiceImpl implements PermissionService {
+    private static final Logger log = LoggerFactory.getLogger(PermissionServiceImpl.class);
+
     @Override
     public Result<List<MenuVo>> getRolePermission(Integer roleId) {
-        log.info("调用{}失败","getRolePermission");
-        return Result.failure(100,"调用getRolePermission失败");
+        log.info("调用{}失败", "getRolePermission");
+        return Result.failure(100, "调用getRolePermission失败");
     }
 }
