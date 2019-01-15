@@ -1,0 +1,24 @@
+server:
+  port: 10005
+spring:
+  application:
+    name: cloud-data
+  datasource:
+      url: jdbc:mysql://47.106.11.84:3306/zuul-auth?useUnicode=true&characterEncoding=utf-8
+      username: root
+      password: wangshihao
+      druid:
+        driver-class-name: com.mysql.jdbc.Driver
+eureka:
+  instance:
+    prefer-ip-address: true #使用IP注册
+    instance-id: ${spring.cloud.client.ip-address}:${server.port}
+    ##续约更新时间间隔设置5秒，m默认30s
+    lease-renewal-interval-in-seconds: 5
+    ##续约到期时间10秒，默认是90秒
+    lease-expiration-duration-in-seconds: 10
+  client:
+      service-url:
+        defaultZone: http://localhost:10001/eureka/
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
