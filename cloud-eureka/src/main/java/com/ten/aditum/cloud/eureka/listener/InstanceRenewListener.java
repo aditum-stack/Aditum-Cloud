@@ -11,7 +11,7 @@ import org.springframework.context.annotation.Configuration;
  */
 @Configuration
 public class InstanceRenewListener implements ApplicationListener<EurekaInstanceRenewedEvent> {
-    private static final Logger log = LoggerFactory.getLogger(InstanceRenewListener.class);
+    private static final Logger log= LoggerFactory.getLogger(InstanceRenewListener.class);
 
     @Override
     public void onApplicationEvent(EurekaInstanceRenewedEvent event) {

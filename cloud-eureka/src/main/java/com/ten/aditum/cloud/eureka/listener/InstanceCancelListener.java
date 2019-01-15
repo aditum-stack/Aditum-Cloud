@@ -12,7 +12,7 @@ import org.springframework.lang.NonNull;
  */
 @Configuration
 public class InstanceCancelListener implements ApplicationListener<EurekaInstanceCanceledEvent> {
-    private static final Logger log = LoggerFactory.getLogger(InstanceRegisterListener.class);
+    private static final Logger log= LoggerFactory.getLogger(InstanceRegisterListener.class);
 
     @Override
     public void onApplicationEvent(@NonNull EurekaInstanceCanceledEvent event) {

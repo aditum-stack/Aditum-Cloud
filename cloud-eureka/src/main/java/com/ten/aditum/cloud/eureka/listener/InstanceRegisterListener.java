@@ -12,7 +12,7 @@ import org.springframework.lang.NonNull;
  */
 @Configuration
 public class InstanceRegisterListener implements ApplicationListener<EurekaInstanceRegisteredEvent> {
-    private static final Logger log = LoggerFactory.getLogger(InstanceRegisterListener.class);
+    private static final Logger log= LoggerFactory.getLogger(InstanceRegisterListener.class);
 
     @Override
     public void onApplicationEvent(@NonNull EurekaInstanceRegisteredEvent eurekaInstanceRegisteredEvent) {
