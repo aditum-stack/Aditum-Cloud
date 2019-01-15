@@ -15,7 +15,7 @@ public interface ProduceClient {
     /**
      * 通过网关访问服务
      */
-    @GetMapping("/produce-service/produce/{string}")
+    @GetMapping("/api/produce-service/produce/{string}")
     String produce(@PathVariable("string") String string) throws Exception;
 
 }
