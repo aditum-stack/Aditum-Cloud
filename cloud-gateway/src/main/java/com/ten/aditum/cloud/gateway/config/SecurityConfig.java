@@ -65,10 +65,10 @@ public class SecurityConfig extends ResourceServerConfigurerAdapter {
                 .anyRequest()
                 .authenticated();
 
-        // TODO 除授权服务外全部校验用户权限
-        registry
-                .anyRequest()
-                .access("permissionService.hasPermission(request,authentication)");
+//        // TODO 除授权服务外全部校验用户权限
+//        registry
+//                .anyRequest()
+//                .access("permissionService.hasPermission(request,authentication)");
     }
 
     @Override

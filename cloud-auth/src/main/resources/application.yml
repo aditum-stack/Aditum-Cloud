@@ -4,18 +4,20 @@ server:
 spring:
   application:
     name: cloud-auth
+
   jpa:
     show-sql: true
   datasource:
-    url: jdbc:mysql://localhost:3306/zuul-auth?useUnicode=true&characterEncoding=utf-8
+    url: jdbc:mysql://47.106.11.84:3306/zuul-auth?useUnicode=true&characterEncoding=utf-8
     username: root
-    password: 123456
+    password: wangshihao
     druid:
       driver-class-name: com.mysql.jdbc.Driver
   redis:
     host: 127.0.0.1
     port: 6379
-    password: 123456
+    password: wangshihao
+
 eureka:
   instance:
     prefer-ip-address: true
@@ -26,7 +28,7 @@ eureka:
     lease-expiration-duration-in-seconds: 10
   client:
       service-url:
-        defaultZone: http://mss-eureka1:9010/eureka/
+        defaultZone: http://localhost:10001/eureka/
 logging:
   config: classpath:logback.xml
   level:
