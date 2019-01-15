@@ -1,6 +1,5 @@
-package com.ten.aditum.cloud.auth.service.impl;
+package com.ten.aditum.cloud.auth.service;
 
-import com.ten.aditum.cloud.auth.service.PermissionService;
 import com.ten.aditum.cloud.auth.vo.MenuVo;
 import com.ten.aditum.cloud.auth.vo.Result;
 import org.slf4j.Logger;
@@ -9,16 +8,9 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-/**
- * Created with IntelliJ IDEA.
- * Description:
- * User: Mr.Yangxiufeng
- * Date: 2018-06-13
- * Time: 11:14
- */
 @Service
-public class PermissionServiceImpl implements PermissionService {
-    private static final Logger log = LoggerFactory.getLogger(PermissionServiceImpl.class);
+public class PermissionServiceFallback implements PermissionService {
+    private static final Logger log = LoggerFactory.getLogger(PermissionServiceFallback.class);
 
     @Override
     public Result<List<MenuVo>> getRolePermission(Integer roleId) {

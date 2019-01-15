@@ -1,6 +1,5 @@
-package com.ten.aditum.cloud.auth.service.impl;
+package com.ten.aditum.cloud.auth.service;
 
-import com.ten.aditum.cloud.auth.service.RoleService;
 import com.ten.aditum.cloud.auth.vo.Result;
 import com.ten.aditum.cloud.auth.vo.RoleVo;
 import org.slf4j.Logger;
@@ -9,16 +8,9 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-/**
- * Created with IntelliJ IDEA.
- * Description:
- * User: Mr.Yangxiufeng
- * Date: 2018-06-13
- * Time: 11:06
- */
 @Service
-public class RoleServiceImpl implements RoleService {
-    private static final Logger log = LoggerFactory.getLogger(RoleServiceImpl.class);
+public class RoleServiceFallback implements RoleService {
+    private static final Logger log = LoggerFactory.getLogger(RoleServiceFallback.class);
 
     @Override
     public Result<List<RoleVo>> getRoleByUserId(Integer userId) {

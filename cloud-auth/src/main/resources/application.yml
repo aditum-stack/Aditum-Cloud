@@ -14,7 +14,7 @@ spring:
     druid:
       driver-class-name: com.mysql.jdbc.Driver
   redis:
-    host: 127.0.0.1
+    host: localhost
     port: 6379
     password: wangshihao
 
@@ -29,16 +29,19 @@ eureka:
   client:
       service-url:
         defaultZone: http://localhost:10001/eureka/
-logging:
-  config: classpath:logback.xml
-  level:
-    org:
-      springframework:
-        web: info
+
+#logging:
+#  config: classpath:logback.xml
+#  level:
+#    org:
+#      springframework:
+#        web: info
 ###feign 默认关闭熔断，请看HystrixFeignConfiguration
+
 feign:
   hystrix:
     enabled: true
+
 hystrix:
   command:
     default:
@@ -46,6 +49,7 @@ hystrix:
         isolation:
           thread:
             timeoutInMilliseconds: 60000
+
 ribbon:
   ReadTimeout: 30000
   ConnectTimeout: 60000
