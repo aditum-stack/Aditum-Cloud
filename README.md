@@ -6,12 +6,16 @@ Spring Cloud Center for Aditum. Aditum微服务架构中心.
 
 |模块|功能|环境|端口号|
 |---|---|---|---|
-|Eureka-Server|服务注册中心服务端|生产|10001
-|Gateway-Zuul|服务API网关服务|生产|10002
-|Hystrix-Dashboard|服务状态监控器|生产-监控|10003
-|Eureka-Client|服务注册中心客户端|测试Eureka注册服务|20001
-|Consume-Service|服务消费者|测试微服务流程-调用服务|20002
-|Produce-Service|服务生产者|测试微服务流程-提供服务|20003
+|cloud-eureka|服务发现注册中心|生产|10001
+|cloud-gateway|API统一网关服务|生产|10002
+|cloud-monitor|服务状态监控|生产|10003
+|cloud-auth|服务权限认证|生产|10004
+|cloud-data|服务数据库访问|生产|10005
+|cloud-stream|消息队列|生产|10006
+|cloud-track|链路跟踪|生产|10007
+|cloud-client|服务注册中心客户端|测试Eureka注册服务|20001
+|cloud-consume|服务消费者|测试微服务流程-调用服务|20002
+|cloud-produce|服务生产者|测试微服务流程-提供服务|20003
 
 ## 启动流程
 

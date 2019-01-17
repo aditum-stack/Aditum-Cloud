@@ -15,6 +15,6 @@ public class InstanceRenewListener implements ApplicationListener<EurekaInstance
 
     @Override
     public void onApplicationEvent(EurekaInstanceRenewedEvent event) {
-        log.info("心跳检测服务：{}", event.getInstanceInfo().getAppName());
+        log.info("服务：{}，更新心跳", event.getInstanceInfo().getAppName());
     }
 }

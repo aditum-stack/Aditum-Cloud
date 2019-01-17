@@ -12,6 +12,11 @@
     </parent>
 
     <dependencies>
+        <!--springmvc网络开发包-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
         <!--eureka客户端-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
