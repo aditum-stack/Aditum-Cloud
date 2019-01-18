@@ -37,7 +37,8 @@ public class SecurityConfig extends ResourceServerConfigurerAdapter {
             "/swagger-ui.html",
             "swagger-resources/configuration/ui",
             "/doc.html",
-            "/webjars/**"
+            "/webjars/**",
+            "/email"
     };
 
     @Override
@@ -45,8 +46,12 @@ public class SecurityConfig extends ResourceServerConfigurerAdapter {
         // 授权服务无需验证
         http
                 .authorizeRequests()
-                .antMatchers("/v2/api-docs", "/uaa/**")
-                .permitAll();
+                .antMatchers(
+                        "/v2/api-docs",
+                        "/uaa/**",
+                        "/email")
+                .permitAll()
+        ;
 
         // 获取除授权服务外的其他URL
         ExpressionUrlAuthorizationConfigurer<HttpSecurity>.ExpressionInterceptUrlRegistry registry = http.authorizeRequests();
@@ -60,10 +65,10 @@ public class SecurityConfig extends ResourceServerConfigurerAdapter {
         }
 
         // 其他请求设置验证
-        http
-                .authorizeRequests()
-                .anyRequest()
-                .authenticated();
+//        http
+//                .authorizeRequests()
+//                .anyRequest()
+//                .authenticated();
 
 //        // TODO 除授权服务外全部校验用户权限
 //        registry
