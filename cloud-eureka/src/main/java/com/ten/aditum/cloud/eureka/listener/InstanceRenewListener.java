@@ -1,7 +1,6 @@
 package com.ten.aditum.cloud.eureka.listener;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.cloud.netflix.eureka.server.event.EurekaInstanceRenewedEvent;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.annotation.Configuration;
@@ -9,12 +8,13 @@ import org.springframework.context.annotation.Configuration;
 /**
  * 服务心跳监听
  */
+@Slf4j
 @Configuration
 public class InstanceRenewListener implements ApplicationListener<EurekaInstanceRenewedEvent> {
-    private static final Logger log= LoggerFactory.getLogger(InstanceRenewListener.class);
-
     @Override
     public void onApplicationEvent(EurekaInstanceRenewedEvent event) {
-        log.info("服务：{}，更新心跳", event.getInstanceInfo().getAppName());
+        if (log.isDebugEnabled()) {
+            log.debug("服务[{}]更新心跳", event.getInstanceInfo().getAppName());
+        }
     }
 }

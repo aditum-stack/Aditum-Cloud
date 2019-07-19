@@ -8,6 +8,19 @@
     <artifactId>parent</artifactId>
 
     <version>0.0.1-SNAPSHOT</version>
+    <modules>
+        <module>cloud-track</module>
+        <module>cloud-stream</module>
+        <module>cloud-produce</module>
+        <module>cloud-monitor</module>
+        <module>cloud-metric</module>
+        <module>cloud-gateway</module>
+        <module>cloud-eureka</module>
+        <module>cloud-data</module>
+        <module>cloud-consume</module>
+        <module>cloud-client</module>
+        <module>cloud-auth</module>
+    </modules>
     <packaging>pom</packaging>
 
     <name>Aditum-Cloud</name>
@@ -34,13 +47,11 @@
     </properties>
 
     <dependencies>
-        <!--java代码简化-->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <version>${lombok.version}</version>
         </dependency>
-        <!--test单元测试-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
@@ -50,19 +61,16 @@
 
     <dependencyManagement>
         <dependencies>
-            <!--springboot依赖-->
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter</artifactId>
                 <version>2.0.7.RELEASE</version>
             </dependency>
-            <!--springmvc网络开发包-->
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-web</artifactId>
                 <version>2.0.7.RELEASE</version>
             </dependency>
-            <!--apollo配置中心客户端-->
             <dependency>
                 <groupId>com.ctrip.framework.apollo</groupId>
                 <artifactId>apollo-client</artifactId>
@@ -80,7 +88,6 @@
                 <artifactId>druid-spring-boot-starter</artifactId>
                 <version>${druid-starter.version}</version>
             </dependency>
-            <!--springcloud依赖F版本(对应于springboot2.x版本)-->
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>

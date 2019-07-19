@@ -13,6 +13,7 @@ Spring Cloud Center for Aditum. Aditum微服务架构中心.
 |cloud-data|服务数据库访问|生产|10005
 |cloud-stream|消息队列|生产|10006
 |cloud-track|链路跟踪|生产|10007
+|cloud-metric|告警服务|生产|10008
 |cloud-client|服务注册中心客户端|测试Eureka注册服务|20001
 |cloud-consume|服务消费者|测试微服务流程-调用服务|20002
 |cloud-produce|服务生产者|测试微服务流程-提供服务|20003
